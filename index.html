@@ -1,0 +1,2734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adẹ́níyì & Shanelle | Our Journey So Far</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/tui-image-editor@3.15.3/dist/tui-image-editor.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tui-image-editor@3.15.3/dist/tui-image-editor.min.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --cream: #f8f5f0;
+            --beige: #f0ebe3;
+            --light-beige: #f7f3ed;
+            --dark-beige: #e8e1d6;
+            --charcoal: #1a1a1a;
+            --gray: #666666;
+            --light-gray: #999999;
+            --border-gray: #e5e5e5;
+            --gold: #d4af37;
+            --rose-gold: #b76e79;
+            --spacing-sm: 20px;
+            --spacing-md: 40px;
+            --spacing-lg: 60px;
+            --transition: all 0.3s ease;
+            --success: #4CAF50;
+            --error: #f44336;
+            --info: #2196F3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            display: none;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.4s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .modal-header h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .modal-header p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .btn {
+            padding: 14px 28px;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: var(--gray);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+        }
+
+        .btn-primary:hover {
+            background: #c19b2c;
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #3d8b40;
+        }
+
+        .btn-warning {
+            background: var(--info);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--charcoal);
+            transform: rotate(90deg);
+        }
+
+        .auth-modal {
+            max-width: 400px;
+        }
+
+        .security-alert {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid var(--error);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: var(--charcoal);
+        }
+
+        .security-alert i {
+            color: var(--error);
+            margin-right: 10px;
+        }
+
+        .success-alert {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: var(--charcoal);
+        }
+
+        .success-alert i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+
+        .code-inputs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .code-input {
+            width: 50px;
+            height: 60px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        .code-input:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .code-input.filled {
+            border-color: var(--success);
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .guest-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .album-comments {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-gray);
+        }
+
+        .comment-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .comment-input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .comment-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .comments-list {
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .comment-item {
+            background: var(--cream);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-right: 8px;
+        }
+
+        .comment-text {
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        .comment-date {
+            font-size: 11px;
+            color: var(--light-gray);
+            margin-top: 3px;
+        }
+
+        .hotkey-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--charcoal);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .main-content {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .couple-names {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .and {
+            font-size: 18px;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .featured-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .featured-item {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .featured-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .featured-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .albums-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .album-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .album-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .album-cover {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .album-card:hover .album-cover img {
+            transform: scale(1.1);
+        }
+
+        .album-info {
+            padding: 25px;
+        }
+
+        .album-icon {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .album-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .album-count {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .story-section {
+            background: var(--beige);
+            padding: var(--spacing-lg) 0;
+            margin: var(--spacing-lg) 0;
+            border-radius: 20px;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .story-title {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+        }
+
+        .story-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo-subtitle {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            color: var(--light-gray);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 12px;
+            color: var(--light-gray);
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--cream);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-gray);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--charcoal);
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            color: var(--gray);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .shop-now-btn {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 10px 24px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .shop-now-btn:hover {
+            background-color: var(--gray);
+        }
+
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: -500px;
+            width: 480px;
+            height: 100%;
+            background-color: var(--cream);
+            z-index: 3000;
+            transition: right 0.4s ease;
+            border-left: 1px solid var(--border-gray);
+            padding: 40px;
+            overflow-y: auto;
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+        }
+
+        .admin-panel.active {
+            right: 0;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .admin-header h3 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .admin-section {
+            margin-bottom: 30px;
+        }
+
+        .admin-section h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .upload-system {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-gray);
+            margin-bottom: 30px;
+        }
+
+        .upload-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border-gray);
+            padding-bottom: 10px;
+        }
+
+        .upload-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--gray);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .upload-tab.active {
+            color: var(--charcoal);
+        }
+
+        .upload-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--charcoal);
+        }
+
+        .drag-drop-area {
+            border: 3px dashed var(--border-gray);
+            border-radius: 12px;
+            padding: 50px 30px;
+            text-align: center;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--cream);
+        }
+
+        .drag-drop-area:hover, .drag-drop-area.dragover {
+            border-color: var(--charcoal);
+            background: rgba(0,0,0,0.02);
+        }
+
+        .drag-drop-area i {
+            font-size: 48px;
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+
+        .drag-drop-area .subtext {
+            font-size: 13px;
+            color: var(--light-gray);
+            margin-top: 5px;
+        }
+
+        .google-photos-section {
+            background: rgba(66, 133, 244, 0.05);
+            border: 1px solid rgba(66, 133, 244, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .google-photos-section h5 {
+            color: #4285F4;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .google-link-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-gray);
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .google-help {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        .google-help a {
+            color: #4285F4;
+            text-decoration: none;
+        }
+
+        .upload-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background: var(--cream);
+            border-radius: 8px;
+        }
+
+        .preview-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .preview-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .preview-item img, .preview-item video {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .preview-actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .preview-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            transition: var(--transition);
+        }
+
+        .preview-btn:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+        }
+
+        .set-as-cover {
+            background: var(--gold);
+        }
+
+        .edit-photo {
+            background: var(--rose-gold);
+        }
+
+        .remove-btn {
+            background: #ff4444;
+        }
+
+        .album-selector-modal {
+            max-width: 600px;
+            padding: 30px;
+        }
+
+        .album-selector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .album-selector-option {
+            background: white;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 20px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .album-selector-option:hover {
+            border-color: var(--charcoal);
+        }
+
+        .album-selector-option.active {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .album-selector-option i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+
+        .album-selector-option.active i {
+            color: var(--gold);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .upload-btn {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .upload-btn:hover {
+            background: var(--gray);
+        }
+
+        .set-featured-btn {
+            background: var(--rose-gold);
+            color: white;
+        }
+
+        .set-featured-btn:hover {
+            background: #a55c68;
+        }
+
+        .editor-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 4000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .editor-modal.active {
+            display: flex;
+        }
+
+        .editor-container {
+            background: white;
+            width: 90%;
+            height: 90%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .editor-header {
+            padding: 20px;
+            background: var(--charcoal);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .editor-content {
+            height: calc(100% - 70px);
+        }
+
+        .featured-manager {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-gray);
+            margin-top: 30px;
+        }
+
+        .featured-manager-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .featured-slot {
+            background: var(--cream);
+            border: 2px dashed var(--border-gray);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured-slot:hover {
+            border-color: var(--charcoal);
+        }
+
+        .featured-slot.has-image {
+            border: 2px solid var(--gold);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .featured-slot.has-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--border-gray);
+            border-radius: 3px;
+            margin: 15px 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--success);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--gray);
+        }
+
+        .btn-primary {
+            background: var(--gold);
+        }
+
+        .btn-primary:hover {
+            background: #c19b2c;
+        }
+
+        .yoruba-name {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border-top-color: var(--gold);
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .upload-status {
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--gray);
+            text-align: center;
+            display: none;
+        }
+
+        .upload-status.success {
+            color: var(--success);
+        }
+
+        .upload-status.error {
+            color: var(--error);
+        }
+
+        @media (max-width: 768px) {
+            .admin-panel {
+                width: 100%;
+                right: -100%;
+                padding: 20px;
+            }
+            
+            .album-selector-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-item {
+                height: 300px;
+            }
+            
+            .albums-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .couple-names {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            body {
+                padding-top: 70px;
+            }
+            
+            .modal {
+                padding: 20px;
+            }
+            
+            .code-inputs {
+                gap: 5px;
+            }
+            
+            .code-input {
+                width: 40px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .featured-manager-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="modal-overlay" id="guestWelcomeModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Welcome to Our Love Story</h2>
+                <p>Adẹ́níyì & Shanelle | January 8, 2026</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="guestName">Your Name *</label>
+                <input type="text" id="guestName" class="form-control" placeholder="Enter your full name">
+                <div class="form-text">This will be displayed with your comments</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="guestEmail">Email Address (Optional)</label>
+                <input type="email" id="guestEmail" class="form-control" placeholder="your@email.com">
+                <div class="form-text">We'll never share your email</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="guestRelationship">Your Relationship to the Couple</label>
+                <select id="guestRelationship" class="form-control">
+                    <option value="">Select relationship (optional)</option>
+                    <option value="family">Family</option>
+                    <option value="friend">Friend</option>
+                    <option value="colleague">Colleague</option>
+                    <option value="guest">Wedding Guest</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-primary" onclick="saveGuestInfo()">
+                <i class="fas fa-heart"></i> Join Our Love Story
+            </button>
+        </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="adminAuthModal">
+        <div class="modal auth-modal">
+            <button class="close-modal" onclick="closeAdminAuth()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-header">
+                <h2><i class="fas fa-user-lock"></i> Admin Verification</h2>
+                <p>Enter your email to receive a secure access code</p>
+            </div>
+            
+            <div class="security-alert" id="securityAlert">
+                <i class="fas fa-shield-alt"></i>
+                <strong>Secure Access:</strong> A 6-digit code will be sent to your email for verification.
+            </div>
+            
+            
+            <div id="authStep1">
+                <div class="form-group">
+                    <label for="adminEmail">Your Admin Email *</label>
+                    <input type="email" id="adminEmail" class="form-control" 
+                           placeholder="your@email.com">
+                    <div class="form-text">Access code will be sent to this email</div>
+                </div>
+                
+                <button class="btn btn-warning" onclick="sendEmailCode()" id="sendCodeBtn">
+                    <i class="fas fa-paper-plane"></i> Send Access Code
+                </button>
+            </div>
+            
+            
+            <div id="authStep2" style="display: none;">
+                <div class="success-alert">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Code Sent!</strong> Check your email for the 6-digit access code.
+                </div>
+                
+                <div class="form-group">
+                    <label>Enter 6-digit Access Code *</label>
+                    <div class="code-inputs">
+                        <input type="text" maxlength="1" class="code-input" data-index="0">
+                        <input type="text" maxlength="1" class="code-input" data-index="1">
+                        <input type="text" maxlength="1" class="code-input" data-index="2">
+                        <input type="text" maxlength="1" class="code-input" data-index="3">
+                        <input type="text" maxlength="1" class="code-input" data-index="4">
+                        <input type="text" maxlength="1" class="code-input" data-index="5">
+                    </div>
+                    <div class="form-text" style="text-align: center; margin-top: 10px;">
+                        <small style="color: var(--gray);">
+                            <i class="fas fa-clock"></i> Code expires in 10 minutes
+                        </small>
+                    </div>
+                </div>
+                
+                <button class="btn btn-success" onclick="verifyEmailCode()" id="verifyCodeBtn">
+                    <i class="fas fa-key"></i> Verify & Access Admin Panel
+                </button>
+                
+                <button class="btn" onclick="backToEmailStep()" style="margin-top: 10px;">
+                    <i class="fas fa-arrow-left"></i> Back to Email
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal-overlay" id="albumSelectModal">
+        <div class="modal album-selector-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-folder-open"></i> Select Album</h2>
+                <p>Choose an album to upload your files to</p>
+            </div>
+            
+            <div class="album-selector-grid" id="albumSelectionGrid">
+                
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="confirmAlbumSelection()">
+                    <i class="fas fa-check"></i> Upload to Selected Album
+                </button>
+                <button class="btn" onclick="closeAlbumSelection()" style="margin-top: 10px;">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="hotkey-hint" id="hotkeyHint">
+        <i class="fas fa-keyboard"></i> Admin Panel: Ctrl + Shift + A
+    </div>
+
+    
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">ADẸ́NÍYÌ & SHANELLE</div>
+                <div class="logo-subtitle">OUR JOURNEY SO FAR</div>
+            </div>
+            
+            <div class="header-actions">
+                
+                <div id="guestInfoDisplay" style="font-size: 12px; color: var(--gray); display: none;">
+                    <i class="fas fa-user"></i> <span id="currentGuestName"></span>
+                    <span class="guest-badge" id="guestBadge">Guest</span>
+                </div>
+                
+                <button class="shop-now-btn" onclick="window.open('https://amokeclothings.com', '_blank')">
+                    SHOP NOW
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="main-content">
+        <div class="container">
+            
+            <section class="hero-section">
+                <h1 class="hero-title">Our Love Story</h1>
+                <p class="hero-subtitle">A digital album of our journey together</p>
+                
+                <div class="couple-names">
+                    <div class="name">Adẹ́níyì <span class="yoruba-name">Adeosun</span></div>
+                    <div class="and">&</div>
+                    <div class="name">Shanelle <span class="yoruba-name">Palmer</span></div>
+                </div>
+            </section>
+
+            
+            <section class="featured-section">
+                <h2 class="section-title">Featured Moments</h2>
+                <div class="featured-grid" id="websiteFeaturedGrid">
+                    
+                </div>
+            </section>
+
+            
+            <section class="albums-section">
+                <h2 class="section-title">Our Albums</h2>
+                <div class="albums-grid" id="websiteAlbumsGrid">
+                    
+                </div>
+            </section>
+
+            
+            <section class="story-section">
+                <div class="story-content">
+                    <h2 class="story-title">Our Journey Together</h2>
+                    <p class="story-text">
+                        From our first date to building our family, every moment has been a beautiful chapter in our love story. 
+                        This digital album captures the essence of our journey - the laughter, the tears, the milestones, 
+                        and the everyday magic that makes our love grow stronger each day.
+                    </p>
+                    <p class="story-text">
+                        Welcome to our world. Welcome to our story.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <div class="footer-logo">ADẸ́NÍYÌ & SHANELLE</div>
+                    <div class="footer-logo-subtitle">OUR JOURNEY</div>
+                </div>
+                <div class="footer-text">
+                    Made with <i class="fas fa-heart" style="color: var(--rose-gold);"></i> for eternity
+                </div>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2024 Adẹ́níyì & Shanelle. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="editor-modal" id="editorModal">
+        <div class="editor-container">
+            <div class="editor-header">
+                <h3>Edit Photo</h3>
+                <button class="close-admin" onclick="closeEditor()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="editor-content" id="imageEditor"></div>
+        </div>
+    </div>
+
+    
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h3><i class="fas fa-user-lock"></i> Admin Control Panel</h3>
+            <button class="close-admin" id="closeAdmin">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        
+        <div class="progress-bar" id="uploadProgress">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="upload-status" id="uploadStatus"></div>
+        
+        
+        <div class="upload-system">
+            <div class="upload-tabs">
+                <button class="upload-tab active" data-tab="direct">📁 Direct Upload</button>
+                <button class="upload-tab" data-tab="google">📸 Google Photos</button>
+            </div>
+            
+            
+            <div class="upload-tab-content active" id="tab-direct">
+                <div class="drag-drop-area" id="dragDropArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h4>Drag & Drop Photos/Videos</h4>
+                    <p>From your computer folder, drag files here</p>
+                    <p class="subtext">Supports: JPG, PNG, GIF, MP4, MOV (Max 10MB each)</p>
+                    <input type="file" id="fileUpload" multiple accept="image/*,video/*" style="display: none;">
+                </div>
+                
+                <div class="upload-preview" id="uploadPreview"></div>
+                
+                <div class="action-buttons">
+                    <button class="action-btn upload-btn" id="uploadBtn" onclick="showAlbumSelector()">
+                        <i class="fas fa-upload"></i> Select Album & Upload
+                    </button>
+                    <button class="action-btn set-featured-btn" id="setFeaturedBtn" onclick="setAsFeatured()">
+                        <i class="fas fa-star"></i> Set as Featured
+                    </button>
+                </div>
+            </div>
+            
+            
+            <div class="upload-tab-content" id="tab-google">
+                <div class="google-photos-section">
+                    <h5><i class="fab fa-google"></i> Google Photos Integration</h5>
+                    <input type="text" class="google-link-input" id="googleLink" 
+                           placeholder="Paste Google Photos album or image link">
+                    <button class="btn" style="width: 100%; margin-bottom: 15px;" onclick="fetchGooglePhotos()">
+                        <i class="fas fa-link"></i> Import from Google Photos
+                    </button>
+                    
+                    <div class="google-help">
+                        <p><strong>How to get Google Photos links:</strong></p>
+                        <ol style="margin: 10px 0 10px 20px; font-size: 11px;">
+                            <li>Open Google Photos on computer</li>
+                            <li>Select photo/album → Click "Share"</li>
+                            <li>Choose "Create link" → Copy link</li>
+                            <li>Paste link above</li>
+                        </ol>
+                        <p><a href="https://photos.google.com" target="_blank">Open Google Photos →</a></p>
+                    </div>
+                </div>
+                
+                <div class="upload-preview" id="googlePreview"></div>
+                
+                <button class="btn btn-primary" style="width: 100%;" onclick="importGooglePhotos()">
+                    <i class="fas fa-download"></i> Import Selected Photos
+                </button>
+            </div>
+        </div>
+        
+        
+        <div class="featured-manager">
+            <h4><i class="fas fa-home"></i> Homepage Featured Photos</h4>
+            <p style="font-size: 13px; color: var(--gray); margin: 10px 0;">
+                Set photos that appear on the homepage (3 spots available)
+            </p>
+            
+            <div class="featured-manager-grid" id="featuredGrid">
+                
+            </div>
+        </div>
+        
+        
+        <div class="featured-manager">
+            <h4><i class="fas fa-images"></i> Album Cover Photos</h4>
+            <p style="font-size: 13px; color: var(--gray); margin: 10px 0;">
+                Set cover photos for each album
+            </p>
+            
+            <div class="album-selector-grid" id="coverAlbumSelector">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emailjsConfig = {
+            serviceId: 'service_q8tfvdj',
+            templateId: 'template_vkyf6na',
+            publicKey: '-2gkH8dOa2taDhv7p',
+            tokenExpiry: 10 * 60 * 1000,
+            tokenLength: 6,
+            adminEmail: 'adeniyishanelle@gmail.com'
+        };
+
+        
+        const appState = {
+            currentGuest: null,
+            guests: [],
+            albumComments: {},
+            adminAuthenticated: false,
+            emailToken: null,
+            tokenExpiry: null,
+            adminSessionTimer: null,
+            selectedAlbumForUpload: null,
+            pendingUploadFiles: [],
+            websiteData: {
+                albums: [
+                    { id: 'first-date', name: 'First Date & Early Days', icon: '💑', cover: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', count: 24, files: [] },
+                    { id: 'engagement', name: 'Engagement', icon: '💍', cover: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', count: 36, files: [] },
+                    { id: 'wedding', name: 'Wedding Day', icon: '👰', cover: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', count: 156, files: [] },
+                    { id: 'pregnancy', name: 'Pregnancy Journey', icon: '🤰', cover: 'https://images.unsplash.com/photo-1530041539828-114de669390e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', count: 42, files: [] },
+                    { id: 'ariyo', name: "Ariyo-Ayoola's Arrival", icon: '👶', cover: 'https://images.unsplash.com/photo-1529254479751-fbacb4c7a587?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', count: 89, files: [] },
+                    { id: 'family', name: 'Family Moments', icon: '👨‍👩‍👦', cover: 'https://images.unsplash.com/photo-1529254479751-fbacb4c7a587?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80', count: 127, files: [] }
+                ],
+                featuredPhotos: [
+                    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                ],
+                selectedFiles: [],
+                googlePhotos: []
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing website...');
+            
+            
+            emailjs.init(emailjsConfig.publicKey);
+            
+            setupCodeInputs();
+            checkGuestRegistration();
+            setupErrorHandling();
+            setupUploadSystem();
+            setupSecurity();
+            setupHotkeys();
+            loadWebsiteContent();
+            loadSavedData();
+            loadFeaturedSlots();
+            populateAlbumSelectors();
+            checkAdminSession();
+            
+            document.getElementById('closeAdmin').addEventListener('click', () => {
+                document.getElementById('adminPanel').classList.remove('active');
+            });
+            
+            console.log('Website initialized successfully!');
+        });
+
+        function setupCodeInputs() {
+            const inputs = document.querySelectorAll('.code-input');
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    const value = e.target.value;
+                    
+                    if (value && !/^\d$/.test(value)) {
+                        e.target.value = '';
+                        return;
+                    }
+                    
+                    if (value && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                    
+                    if (value) {
+                        e.target.classList.add('filled');
+                    } else {
+                        e.target.classList.remove('filled');
+                    }
+                });
+                
+                input.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const pastedData = e.clipboardData.getData('text');
+                    if (/^\d{6}$/.test(pastedData)) {
+                        const digits = pastedData.split('');
+                        inputs.forEach((input, i) => {
+                            input.value = digits[i] || '';
+                            input.classList.add('filled');
+                        });
+                        inputs[5].focus();
+                    }
+                });
+                
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                        inputs[index - 1].focus();
+                        inputs[index - 1].value = '';
+                        inputs[index - 1].classList.remove('filled');
+                    }
+                });
+            });
+        }
+
+        function showAdminAuth() {
+            document.getElementById('adminAuthModal').classList.add('active');
+            showAuthStep(1);
+            document.getElementById('adminEmail').focus();
+        }
+
+        function closeAdminAuth() {
+            document.getElementById('adminAuthModal').classList.remove('active');
+            resetAuthForm();
+        }
+
+        function showAuthStep(step) {
+            if (step === 1) {
+                document.getElementById('authStep1').style.display = 'block';
+                document.getElementById('authStep2').style.display = 'none';
+                document.getElementById('securityAlert').style.display = 'flex';
+            } else {
+                document.getElementById('authStep1').style.display = 'none';
+                document.getElementById('authStep2').style.display = 'block';
+                document.getElementById('securityAlert').style.display = 'none';
+            }
+        }
+
+        function resetAuthForm() {
+            document.getElementById('adminEmail').value = '';
+            document.querySelectorAll('.code-input').forEach(input => {
+                input.value = '';
+                input.classList.remove('filled');
+            });
+            showAuthStep(1);
+        }
+
+        function backToEmailStep() {
+            showAuthStep(1);
+        }
+
+        async function sendEmailCode() {
+            const email = document.getElementById('adminEmail').value.trim();
+            
+            if (!email || !validateEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            emailjsConfig.adminEmail = email;
+            
+            const token = generateEmailToken();
+            appState.emailToken = token;
+            appState.tokenExpiry = Date.now() + emailjsConfig.tokenExpiry;
+            
+            const btn = document.getElementById('sendCodeBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="loading"></span> Sending...';
+            btn.disabled = true;
+            
+            try {
+                await sendEmailViaEmailJS(email, token);
+                
+                showAuthStep(2);
+                document.querySelector('.code-input').focus();
+                
+                showToast(`Access code sent to ${email}`, 'success');
+                
+            } catch (error) {
+                console.error('Email send error:', error);
+                showToast('Failed to send access code. Please try again.', 'error');
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        async function sendEmailViaEmailJS(email, token) {
+            try {
+                const templateParams = {
+                    to_email: email,
+                    access_code: token,
+                    expiry_time: '10 minutes',
+                    website_name: 'Adẹ́níyì & Shanelle Wedding Album',
+                    timestamp: new Date().toLocaleString()
+                };
+
+                const response = await emailjs.send(
+                    emailjsConfig.serviceId,
+                    emailjsConfig.templateId,
+                    templateParams
+                );
+
+                console.log('Email sent successfully');
+                return { success: true };
+            } catch (error) {
+                console.error('EmailJS error:', error);
+                throw new Error('Failed to send email. Please check your internet connection and try again.');
+            }
+        }
+
+        function verifyEmailCode() {
+            const inputs = document.querySelectorAll('.code-input');
+            const enteredCode = Array.from(inputs).map(input => input.value).join('');
+            
+            if (enteredCode.length !== 6) {
+                alert('Please enter the full 6-digit code');
+                return;
+            }
+            
+            if (!appState.emailToken || !appState.tokenExpiry) {
+                alert('No active access code found. Please request a new one.');
+                return;
+            }
+            
+            if (Date.now() > appState.tokenExpiry) {
+                alert('Access code has expired. Please request a new one.');
+                return;
+            }
+            
+            if (enteredCode !== appState.emailToken) {
+                alert('Invalid access code. Please check and try again.');
+                return;
+            }
+            
+            appState.adminAuthenticated = true;
+            
+            saveAdminSession();
+            
+            closeAdminAuth();
+            
+            toggleAdminPanel();
+            
+            startAdminSessionTimer();
+            
+            showToast('Admin access granted!', 'success');
+            
+            console.log('Admin authentication successful');
+        }
+
+        function generateEmailToken() {
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+
+        function checkAdminSession() {
+            const sessionData = localStorage.getItem('adminSession');
+            if (!sessionData) return;
+            
+            try {
+                const session = JSON.parse(sessionData);
+                const now = Date.now();
+                
+                if (session.expiresAt > now) {
+                    appState.adminAuthenticated = true;
+                    startAdminSessionTimer();
+                    console.log('Admin session resumed');
+                } else {
+                    logoutAdmin();
+                }
+            } catch (error) {
+                console.error('Session restore error:', error);
+                logoutAdmin();
+            }
+        }
+
+        function saveAdminSession() {
+            const session = {
+                authenticated: true,
+                sessionStart: Date.now(),
+                expiresAt: Date.now() + (30 * 60 * 1000)
+            };
+            localStorage.setItem('adminSession', JSON.stringify(session));
+        }
+
+        function startAdminSessionTimer() {
+            if (appState.adminSessionTimer) {
+                clearTimeout(appState.adminSessionTimer);
+            }
+            
+            appState.adminSessionTimer = setTimeout(() => {
+                logoutAdmin();
+                showToast('Admin session expired. Please log in again.', 'info');
+            }, 30 * 60 * 1000);
+        }
+
+        function logoutAdmin() {
+            appState.adminAuthenticated = false;
+            
+            if (appState.adminSessionTimer) {
+                clearTimeout(appState.adminSessionTimer);
+                appState.adminSessionTimer = null;
+            }
+            
+            document.getElementById('adminPanel').classList.remove('active');
+            
+            localStorage.removeItem('adminSession');
+            
+            console.log('Admin session ended');
+        }
+
+        function setupHotkeys() {
+            document.addEventListener('keydown', (e) => {
+                if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                    e.preventDefault();
+                    
+                    if (appState.adminAuthenticated) {
+                        toggleAdminPanel();
+                    } else {
+                        showAdminAuth();
+                    }
+                }
+            });
+        }
+
+        function toggleAdminPanel() {
+            if (!appState.adminAuthenticated) {
+                showAdminAuth();
+                return;
+            }
+            
+            const panel = document.getElementById('adminPanel');
+            panel.classList.toggle('active');
+            
+            if (panel.classList.contains('active')) {
+                showToast('Admin panel opened', 'info');
+            }
+        }
+
+        function setupUploadSystem() {
+            const dragDropArea = document.getElementById('dragDropArea');
+            const fileInput = document.getElementById('fileUpload');
+            
+            dragDropArea.addEventListener('click', () => fileInput.click());
+            
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+            
+            dragDropArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dragDropArea.classList.add('dragover');
+            });
+            
+            dragDropArea.addEventListener('dragleave', () => {
+                dragDropArea.classList.remove('dragover');
+            });
+            
+            dragDropArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dragDropArea.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+            
+            document.querySelectorAll('.upload-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.dataset.tab;
+                    document.querySelectorAll('.upload-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    document.querySelectorAll('.upload-tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+                });
+            });
+        }
+
+        function handleFiles(files) {
+            const validFiles = Array.from(files).filter(file => {
+                if (file.size > 10 * 1024 * 1024) {
+                    showToast(`File ${file.name} is too large (max 10MB)`, 'error');
+                    return false;
+                }
+                
+                const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'video/mp4', 'video/quicktime'];
+                if (!validTypes.includes(file.type)) {
+                    showToast(`File ${file.name} is not a supported type`, 'error');
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            if (validFiles.length === 0) return;
+            
+            appState.pendingUploadFiles = validFiles;
+            showUploadPreview(validFiles);
+            showToast(`Loaded ${validFiles.length} file(s). Click "Select Album & Upload" to continue.`, 'success');
+        }
+
+        function showUploadPreview(files) {
+            const previewArea = document.getElementById('uploadPreview');
+            previewArea.innerHTML = '';
+            
+            files.forEach((file, index) => {
+                const previewItem = document.createElement('div');
+                previewItem.className = 'preview-item';
+                previewItem.dataset.index = index;
+                
+                if (file.type.startsWith('image/')) {
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(file);
+                    img.onload = () => URL.revokeObjectURL(img.src);
+                    previewItem.appendChild(img);
+                } else if (file.type.startsWith('video/')) {
+                    const video = document.createElement('video');
+                    video.src = URL.createObjectURL(file);
+                    video.controls = true;
+                    video.onloadeddata = () => URL.revokeObjectURL(video.src);
+                    previewItem.appendChild(video);
+                }
+                
+                const actions = document.createElement('div');
+                actions.className = 'preview-actions';
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'preview-btn remove-btn';
+                removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                removeBtn.title = 'Remove';
+                removeBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    appState.pendingUploadFiles.splice(index, 1);
+                    previewItem.remove();
+                    showToast(`Removed. ${appState.pendingUploadFiles.length} file(s) remaining`);
+                };
+                actions.appendChild(removeBtn);
+                
+                previewItem.appendChild(actions);
+                previewArea.appendChild(previewItem);
+            });
+        }
+
+        function showAlbumSelector() {
+            if (appState.pendingUploadFiles.length === 0) {
+                showToast('Please select files first', 'error');
+                return;
+            }
+            
+            populateAlbumSelectionGrid();
+            document.getElementById('albumSelectModal').classList.add('active');
+        }
+
+        function populateAlbumSelectionGrid() {
+            const grid = document.getElementById('albumSelectionGrid');
+            grid.innerHTML = '';
+            
+            appState.websiteData.albums.forEach(album => {
+                const option = document.createElement('div');
+                option.className = 'album-selector-option';
+                option.dataset.albumId = album.id;
+                option.innerHTML = `
+                    <i class="fas fa-${getAlbumIcon(album.id)}"></i>
+                    <div style="font-size: 13px; margin-top: 5px;">${album.name}</div>
+                    <div style="font-size: 11px; color: var(--light-gray); margin-top: 3px;">${album.count} photos</div>
+                `;
+                
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.album-selector-option').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    appState.selectedAlbumForUpload = album.id;
+                });
+                
+                grid.appendChild(option);
+            });
+            
+            if (grid.firstChild) {
+                grid.firstChild.click();
+            }
+        }
+
+        function confirmAlbumSelection() {
+            if (!appState.selectedAlbumForUpload) {
+                showToast('Please select an album', 'error');
+                return;
+            }
+            
+            const album = appState.websiteData.albums.find(a => a.id === appState.selectedAlbumForUpload);
+            if (!album) {
+                showToast('Album not found', 'error');
+                return;
+            }
+            
+            closeAlbumSelection();
+            uploadToAlbum(album);
+        }
+
+        function closeAlbumSelection() {
+            document.getElementById('albumSelectModal').classList.remove('active');
+        }
+
+        async function uploadToAlbum(album) {
+            try {
+                const progressBar = document.getElementById('uploadProgress');
+                const progressFill = document.getElementById('progressFill');
+                const uploadStatus = document.getElementById('uploadStatus');
+                
+                progressBar.style.display = 'block';
+                uploadStatus.style.display = 'block';
+                uploadStatus.textContent = `Uploading ${appState.pendingUploadFiles.length} files to ${album.name}...`;
+                uploadStatus.className = 'upload-status';
+                
+                let progress = 0;
+                const progressInterval = setInterval(() => {
+                    progress += 10;
+                    progressFill.style.width = `${progress}%`;
+                    
+                    if (progress >= 100) {
+                        clearInterval(progressInterval);
+                        
+                        appState.pendingUploadFiles.forEach(file => {
+                            const fileData = {
+                                id: generateId(),
+                                name: file.name,
+                                type: file.type,
+                                size: file.size,
+                                uploadedAt: new Date().toISOString(),
+                                url: URL.createObjectURL(file)
+                            };
+                            
+                            album.files.push(fileData);
+                            album.count++;
+                        });
+                        
+                        saveAlbumData(album);
+                        
+                        loadWebsiteContent();
+                        
+                        uploadStatus.textContent = `Successfully uploaded ${appState.pendingUploadFiles.length} files to ${album.name}`;
+                        uploadStatus.classList.add('success');
+                        
+                        setTimeout(() => {
+                            progressBar.style.display = 'none';
+                            uploadStatus.style.display = 'none';
+                            document.getElementById('uploadPreview').innerHTML = '';
+                            document.getElementById('fileUpload').value = '';
+                            appState.pendingUploadFiles = [];
+                            showToast(`Files uploaded to ${album.name}`, 'success');
+                        }, 2000);
+                    }
+                }, 100);
+                
+            } catch (error) {
+                console.error('Upload error:', error);
+                showToast('Upload failed. Please try again.', 'error');
+            }
+        }
+
+        async function fetchGooglePhotos() {
+            const link = document.getElementById('googleLink').value.trim();
+            
+            if (!link) {
+                showToast('Please enter a Google Photos link', 'error');
+                return;
+            }
+            
+            if (!link.includes('photos.google.com')) {
+                showToast('Please enter a valid Google Photos link', 'error');
+                return;
+            }
+            
+            showToast('Please upload photos directly using the direct upload method.', 'info');
+        }
+
+        function importGooglePhotos() {
+            showToast('Please use the direct upload method for now.', 'info');
+        }
+
+        function loadFeaturedSlots() {
+            const featuredGrid = document.getElementById('featuredGrid');
+            featuredGrid.innerHTML = '';
+            
+            for (let i = 0; i < 3; i++) {
+                const slot = document.createElement('div');
+                slot.className = 'featured-slot';
+                slot.dataset.slot = i;
+                
+                if (appState.websiteData.featuredPhotos[i]) {
+                    slot.classList.add('has-image');
+                    slot.innerHTML = `<img src="${appState.websiteData.featuredPhotos[i]}" alt="Featured ${i+1}">`;
+                } else {
+                    slot.innerHTML = `
+                        <i class="fas fa-plus" style="font-size: 32px; color: var(--light-gray); margin-bottom: 10px;"></i>
+                        <div style="font-size: 13px; color: var(--gray);">Click to add photo</div>
+                        <div style="font-size: 11px; color: var(--light-gray); margin-top: 5px;">Featured Spot ${i+1}</div>
+                    `;
+                }
+                
+                slot.addEventListener('click', () => openFeaturedSelector(i));
+                featuredGrid.appendChild(slot);
+            }
+        }
+
+        function openFeaturedSelector(slotIndex) {
+            if (appState.pendingUploadFiles.length === 0) {
+                showToast('Please select photos first in the upload area', 'info');
+                return;
+            }
+            
+            const imageFiles = appState.pendingUploadFiles.filter(f => f.type.startsWith('image/'));
+            
+            if (imageFiles.length === 0) {
+                showToast('No images selected. Please select image files.', 'error');
+                return;
+            }
+            
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay active';
+            modal.innerHTML = `
+                <div class="modal" style="max-width: 700px;">
+                    <div class="modal-header">
+                        <h2>Select Photo for Featured Spot ${slotIndex + 1}</h2>
+                        <p>Choose from your selected files</p>
+                    </div>
+                    <div class="upload-preview" id="featuredSelectionPreview" style="max-height: 300px;">
+                    </div>
+                    <button class="btn btn-primary" onclick="setFeaturedFromSelection(${slotIndex})" style="margin-top: 20px;">
+                        <i class="fas fa-star"></i> Set as Featured
+                    </button>
+                    <button class="btn" onclick="this.closest('.modal-overlay').remove()" style="margin-top: 10px;">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            const previewArea = document.getElementById('featuredSelectionPreview');
+            imageFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    previewItem.dataset.index = index;
+                    previewItem.innerHTML = `
+                        <img src="${e.target.result}" alt="Photo ${index + 1}">
+                        <div class="preview-actions">
+                            <button class="preview-btn set-as-cover" onclick="selectForFeatured(${index}, this)">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    `;
+                    previewArea.appendChild(previewItem);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        let selectedFeaturedIndex = null;
+
+        function selectForFeatured(index, button) {
+            const previewItems = document.querySelectorAll('#featuredSelectionPreview .preview-item');
+            previewItems.forEach(item => item.classList.remove('selected'));
+            
+            const selectedItem = button.closest('.preview-item');
+            selectedItem.classList.add('selected');
+            selectedFeaturedIndex = index;
+            
+            document.querySelectorAll('#featuredSelectionPreview .preview-btn').forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                btn.style.background = 'var(--gold)';
+            });
+            
+            button.innerHTML = '<i class="fas fa-check-circle"></i>';
+        }
+
+        function setFeaturedFromSelection(slotIndex) {
+            if (selectedFeaturedIndex === null) {
+                showToast('Please select a photo', 'error');
+                return;
+            }
+            
+            const imageFiles = appState.pendingUploadFiles.filter(f => f.type.startsWith('image/'));
+            if (imageFiles[selectedFeaturedIndex]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    appState.websiteData.featuredPhotos[slotIndex] = e.target.result;
+                    saveFeaturedPhotos();
+                    loadFeaturedSlots();
+                    loadWebsiteContent();
+                    
+                    document.querySelector('#featuredSelectionPreview').closest('.modal-overlay').remove();
+                    
+                    showToast(`Set photo as featured spot ${slotIndex + 1}`, 'success');
+                };
+                reader.readAsDataURL(imageFiles[selectedFeaturedIndex]);
+            }
+        }
+
+        function setAsFeatured() {
+            if (appState.pendingUploadFiles.length === 0) {
+                showToast('Please select photos first', 'error');
+                return;
+            }
+            
+            const imageFiles = appState.pendingUploadFiles.filter(f => f.type.startsWith('image/'));
+            
+            if (imageFiles.length === 0) {
+                showToast('No images selected. Please select image files.', 'error');
+                return;
+            }
+            
+            const availableSlot = appState.websiteData.featuredPhotos.findIndex(photo => !photo);
+            
+            if (availableSlot === -1) {
+                if (confirm('All featured spots are filled. Replace spot 1?')) {
+                    setFeaturedImage(0, imageFiles[0]);
+                }
+            } else {
+                setFeaturedImage(availableSlot, imageFiles[0]);
+            }
+        }
+
+        function setFeaturedImage(slotIndex, file) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                appState.websiteData.featuredPhotos[slotIndex] = e.target.result;
+                saveFeaturedPhotos();
+                loadFeaturedSlots();
+                loadWebsiteContent();
+                showToast(`Set as featured spot ${slotIndex + 1}`, 'success');
+            };
+            
+            reader.readAsDataURL(file);
+        }
+
+        function checkGuestRegistration() {
+            const savedGuest = localStorage.getItem('weddingGuest');
+            if (savedGuest) {
+                appState.currentGuest = JSON.parse(savedGuest);
+                updateGuestUI();
+            } else {
+                setTimeout(() => {
+                    document.getElementById('guestWelcomeModal').classList.add('active');
+                }, 1000);
+            }
+            
+            const savedComments = localStorage.getItem('albumComments');
+            if (savedComments) {
+                appState.albumComments = JSON.parse(savedComments);
+            }
+            
+            const savedGuests = localStorage.getItem('weddingGuests');
+            if (savedGuests) {
+                appState.guests = JSON.parse(savedGuests);
+            }
+        }
+
+        function saveGuestInfo() {
+            const name = document.getElementById('guestName').value.trim();
+            const email = document.getElementById('guestEmail').value.trim();
+            const relationship = document.getElementById('guestRelationship').value;
+            
+            if (!name) {
+                alert('Please enter your name');
+                return;
+            }
+            
+            const guest = {
+                id: generateId(),
+                name: name,
+                email: email || '',
+                relationship: relationship || 'guest',
+                registeredAt: new Date().toISOString(),
+                lastActive: new Date().toISOString()
+            };
+            
+            appState.currentGuest = guest;
+            appState.guests.push(guest);
+            
+            localStorage.setItem('weddingGuest', JSON.stringify(guest));
+            localStorage.setItem('weddingGuests', JSON.stringify(appState.guests));
+            
+            document.getElementById('guestWelcomeModal').classList.remove('active');
+            updateGuestUI();
+            
+            showToast(`Welcome ${name}! Feel free to comment on albums.`);
+        }
+
+        function updateGuestUI() {
+            if (appState.currentGuest) {
+                document.getElementById('guestInfoDisplay').style.display = 'block';
+                document.getElementById('currentGuestName').textContent = appState.currentGuest.name;
+                document.getElementById('guestBadge').textContent = appState.currentGuest.relationship;
+                addCommentFormsToAlbums();
+            }
+        }
+
+        function addCommentFormsToAlbums() {
+            const albumsGrid = document.getElementById('websiteAlbumsGrid');
+            if (!albumsGrid) return;
+            
+            const albumCards = albumsGrid.querySelectorAll('.album-card');
+            albumCards.forEach(card => {
+                const albumId = card.dataset.albumId;
+                if (!albumId) return;
+                
+                if (!card.querySelector('.album-comments')) {
+                    const commentsSection = document.createElement('div');
+                    commentsSection.className = 'album-comments';
+                    commentsSection.innerHTML = `
+                        <div class="comment-form">
+                            <input type="text" class="comment-input" 
+                                   placeholder="Add a comment..." 
+                                   data-album="${albumId}">
+                            <button class="btn-small" onclick="submitComment('${albumId}', this)">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="comments-list" id="comments-${albumId}">
+                        </div>
+                    `;
+                    card.appendChild(commentsSection);
+                    loadAlbumComments(albumId);
+                }
+            });
+        }
+
+        function submitComment(albumId, button) {
+            if (!appState.currentGuest) {
+                alert('Please register first to comment');
+                return;
+            }
+            
+            const input = document.querySelector(`.comment-input[data-album="${albumId}"]`);
+            const comment = input.value.trim();
+            
+            if (!comment) {
+                alert('Please write a comment');
+                return;
+            }
+            
+            const commentObj = {
+                id: generateId(),
+                albumId: albumId,
+                guestId: appState.currentGuest.id,
+                author: appState.currentGuest.name,
+                relationship: appState.currentGuest.relationship,
+                comment: comment,
+                date: new Date().toISOString()
+            };
+            
+            if (!appState.albumComments[albumId]) {
+                appState.albumComments[albumId] = [];
+            }
+            
+            appState.albumComments[albumId].push(commentObj);
+            localStorage.setItem('albumComments', JSON.stringify(appState.albumComments));
+            input.value = '';
+            loadAlbumComments(albumId);
+            showToast('Comment added!');
+        }
+
+        function loadAlbumComments(albumId) {
+            const commentsContainer = document.getElementById(`comments-${albumId}`);
+            if (!commentsContainer) return;
+            
+            const comments = appState.albumComments[albumId] || [];
+            commentsContainer.innerHTML = '';
+            
+            if (comments.length === 0) {
+                commentsContainer.innerHTML = '<div style="font-size: 12px; color: var(--light-gray); text-align: center; padding: 10px;">No comments yet</div>';
+                return;
+            }
+            
+            const sortedComments = [...comments].sort((a, b) => 
+                new Date(b.date) - new Date(a.date)
+            ).slice(0, 5);
+            
+            sortedComments.forEach(comment => {
+                const commentEl = document.createElement('div');
+                commentEl.className = 'comment-item';
+                commentEl.innerHTML = `
+                    <div>
+                        <span class="comment-author">${comment.author}</span>
+                        <small style="color: var(--light-gray);">${comment.relationship}</small>
+                    </div>
+                    <div class="comment-text">${comment.comment}</div>
+                    <div class="comment-date">${formatDate(comment.date)}</div>
+                `;
+                commentsContainer.appendChild(commentEl);
+            });
+        }
+
+        function loadWebsiteContent() {
+            try {
+                const websiteFeaturedGrid = document.getElementById('websiteFeaturedGrid');
+                websiteFeaturedGrid.innerHTML = '';
+                
+                appState.websiteData.featuredPhotos.forEach((photo, index) => {
+                    if (photo) {
+                        const featuredItem = document.createElement('div');
+                        featuredItem.className = 'featured-item';
+                        featuredItem.innerHTML = `<img src="${photo}" alt="Featured Moment ${index + 1}">`;
+                        websiteFeaturedGrid.appendChild(featuredItem);
+                    }
+                });
+                
+                const websiteAlbumsGrid = document.getElementById('websiteAlbumsGrid');
+                websiteAlbumsGrid.innerHTML = '';
+                
+                appState.websiteData.albums.forEach(album => {
+                    const albumCard = document.createElement('div');
+                    albumCard.className = 'album-card';
+                    albumCard.dataset.albumId = album.id;
+                    albumCard.innerHTML = `
+                        <div class="album-cover">
+                            <img src="${album.cover}" alt="${album.name}">
+                        </div>
+                        <div class="album-info">
+                            <div class="album-icon">${album.icon}</div>
+                            <h3 class="album-title">${album.name}</h3>
+                            <div class="album-count">${album.count} photos</div>
+                        </div>
+                    `;
+                    
+                    albumCard.addEventListener('click', function() {
+                        showAlbumContents(album.id);
+                    });
+                    
+                    websiteAlbumsGrid.appendChild(albumCard);
+                });
+                
+                if (appState.currentGuest) {
+                    setTimeout(() => {
+                        addCommentFormsToAlbums();
+                    }, 100);
+                }
+                
+            } catch (error) {
+                console.error('Error loading website content:', error);
+                showToast('Error loading content', 'error');
+            }
+        }
+
+        function showAlbumContents(albumId) {
+            const album = appState.websiteData.albums.find(a => a.id === albumId);
+            if (!album) return;
+            
+            let content = `Album: ${album.name}\n\n`;
+            content += `Total Photos: ${album.count}\n\n`;
+            
+            if (album.files.length > 0) {
+                content += 'Recent Photos:\n';
+                album.files.slice(-5).forEach((file, index) => {
+                    content += `${index + 1}. ${file.name} (${formatFileSize(file.size)})\n`;
+                });
+            } else {
+                content += 'No photos uploaded yet.\n';
+            }
+            
+            alert(content);
+        }
+
+        function generateId() {
+            return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+            
+            if (diffMins < 1) return 'Just now';
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            
+            return date.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function getAlbumIcon(albumId) {
+            const icons = {
+                'first-date': 'heart',
+                'engagement': 'gem',
+                'wedding': 'rings-wedding',
+                'pregnancy': 'baby',
+                'ariyo': 'child',
+                'family': 'users'
+            };
+            return icons[albumId] || 'images';
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${type === 'success' ? 'var(--success)' : type === 'error' ? 'var(--error)' : 'var(--charcoal)'};
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                z-index: 1000;
+                animation: fadeInOut 3s ease;
+                font-weight: 500;
+                min-width: 300px;
+                text-align: center;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+                style.remove();
+            }, 3000);
+        }
+
+        function saveAlbumData(album) {
+            try {
+                localStorage.setItem(`album_${album.id}`, JSON.stringify(album));
+                localStorage.setItem('websiteAlbums', JSON.stringify(appState.websiteData.albums));
+            } catch (error) {
+                console.error('Error saving album data:', error);
+            }
+        }
+
+        function saveFeaturedPhotos() {
+            try {
+                localStorage.setItem('featuredPhotos', JSON.stringify(appState.websiteData.featuredPhotos));
+            } catch (error) {
+                console.error('Error saving featured photos:', error);
+            }
+        }
+
+        function loadSavedData() {
+            try {
+                const savedFeatured = localStorage.getItem('featuredPhotos');
+                if (savedFeatured) {
+                    appState.websiteData.featuredPhotos = JSON.parse(savedFeatured);
+                }
+                
+                const savedAlbums = localStorage.getItem('websiteAlbums');
+                if (savedAlbums) {
+                    appState.websiteData.albums = JSON.parse(savedAlbums);
+                }
+                
+                appState.websiteData.albums.forEach(album => {
+                    const savedAlbum = localStorage.getItem(`album_${album.id}`);
+                    if (savedAlbum) {
+                        const albumData = JSON.parse(savedAlbum);
+                        Object.assign(album, albumData);
+                    }
+                });
+                
+                console.log('Saved data loaded from localStorage');
+            } catch (error) {
+                console.error('Error loading saved data:', error);
+            }
+        }
+
+        function populateAlbumSelectors() {
+            const coverSelector = document.getElementById('coverAlbumSelector');
+            coverSelector.innerHTML = '';
+            
+            appState.websiteData.albums.forEach(album => {
+                const option = document.createElement('div');
+                option.className = 'album-selector-option';
+                option.dataset.albumId = album.id;
+                option.innerHTML = `
+                    <i class="fas fa-${getAlbumIcon(album.id)}"></i>
+                    <div style="font-size: 13px; margin-top: 5px;">${album.name}</div>
+                `;
+                
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('#coverAlbumSelector .album-selector-option').forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    showCoverSelectionForAlbum(album.id);
+                });
+                
+                coverSelector.appendChild(option);
+            });
+        }
+
+        function showCoverSelectionForAlbum(albumId) {
+            const album = appState.websiteData.albums.find(a => a.id === albumId);
+            if (!album || album.files.length === 0) {
+                showToast('No photos in this album yet', 'info');
+                return;
+            }
+            
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay active';
+            modal.innerHTML = `
+                <div class="modal" style="max-width: 700px;">
+                    <div class="modal-header">
+                        <h2>Select Cover Photo for ${album.name}</h2>
+                        <p>Choose from album photos</p>
+                    </div>
+                    <div class="upload-preview" id="coverSelectionPreview" style="max-height: 300px;">
+                    </div>
+                    <button class="btn btn-primary" onclick="setAlbumCoverFromSelection('${albumId}')" style="margin-top: 20px;">
+                        <i class="fas fa-image"></i> Set as Album Cover
+                    </button>
+                    <button class="btn" onclick="this.closest('.modal-overlay').remove()" style="margin-top: 10px;">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            const previewArea = document.getElementById('coverSelectionPreview');
+            album.files.forEach((file, index) => {
+                if (file.type.startsWith('image/')) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    previewItem.dataset.index = index;
+                    previewItem.innerHTML = `
+                        <img src="${file.url}" alt="Album Photo ${index + 1}">
+                        <div class="preview-actions">
+                            <button class="preview-btn set-as-cover" onclick="selectForCover(${index}, this)">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    `;
+                    previewArea.appendChild(previewItem);
+                }
+            });
+        }
+
+        let selectedCoverIndex = null;
+
+        function selectForCover(index, button) {
+            const previewItems = document.querySelectorAll('#coverSelectionPreview .preview-item');
+            previewItems.forEach(item => item.classList.remove('selected'));
+            
+            const selectedItem = button.closest('.preview-item');
+            selectedItem.classList.add('selected');
+            selectedCoverIndex = index;
+            
+            document.querySelectorAll('#coverSelectionPreview .preview-btn').forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                btn.style.background = 'var(--gold)';
+            });
+            
+            button.innerHTML = '<i class="fas fa-check-circle"></i>';
+        }
+
+        function setAlbumCoverFromSelection(albumId) {
+            if (selectedCoverIndex === null) {
+                showToast('Please select a photo', 'error');
+                return;
+            }
+            
+            const album = appState.websiteData.albums.find(a => a.id === albumId);
+            if (!album || !album.files[selectedCoverIndex]) {
+                showToast('Photo not found', 'error');
+                return;
+            }
+            
+            album.cover = album.files[selectedCoverIndex].url;
+            saveAlbumData(album);
+            loadWebsiteContent();
+            
+            document.querySelector('#coverSelectionPreview').closest('.modal-overlay').remove();
+            
+            showToast(`Cover photo set for ${album.name}`, 'success');
+        }
+
+        function setupSecurity() {
+            document.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                return false;
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.ctrlKey && e.shiftKey && e.key === 'S') {
+                    e.preventDefault();
+                    return false;
+                }
+                if (e.key === 'PrintScreen') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        }
+
+        function setupErrorHandling() {
+            window.addEventListener('unhandledrejection', function(event) {
+                console.error('Unhandled rejection:', event.reason);
+                showToast('An error occurred. Please try again.', 'error');
+            });
+            
+            window.onerror = function(message, source, lineno, colno, error) {
+                console.error('JavaScript Error:', message, 'at', source, lineno, ':', colno);
+                return false;
+            };
+        }
+    </script>
+</body>
+</html>
